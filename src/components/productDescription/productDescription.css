@@ -1,0 +1,144 @@
+.product {
+  padding: 20px var(--main-left-right-padding) 70px;
+  display: grid;
+  gap: 10px;
+}
+
+.product h1, h2, p {
+  margin: 0;
+  padding: 0;
+}
+
+.product h1 {
+  color: var(--orange);
+  font-size: 14px !important;
+  font-weight: var(--weight2);
+}
+
+.product h2 {
+  color: var(--very-dark-blue);
+  font-size: 30px !important;
+  font-weight: var(--weight2);
+}
+
+.product h2 + p {
+  color: var(--dark-grayish-blue);
+  font-weight: 500;
+  line-height: 1.5rem;
+}
+
+.product .discount {
+  display: flex;
+  align-items: center;
+  padding:20px var(--main-left-right-padding);
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.product .discount div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.discount div:first-child p:first-child{
+  font-size: 25px;
+  font-weight: var(--weight2);
+}
+
+.discount div:first-child p:last-child{
+  box-sizing: border-box;
+  background-color: var(--pale-orange);
+  border-radius: 5px;
+  padding: 2px 7px;
+  color: var(--orange);
+  font-weight: var(--weight2);
+}
+
+.product .discount > p:last-child {
+  color: var(--grayish-blue);
+  text-decoration: line-through;
+  font-weight: var(--weight2);
+}
+
+.product form {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 var(--main-left-right-padding);
+}
+
+.product form div {
+  background-color: var(--light-grayish-blue);
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  align-items: center;
+}
+
+.product form div input {
+  height: 100%;
+  background-color: inherit;
+  text-align: center;
+  color: var(--dark-grayish-blue);
+  font-size: 18px;
+  border: none;
+}
+
+.product form div button {
+  background-color: var(--light-grayish-blue);
+  border: none;
+  font-size: 30px;
+  color: var(--orange);
+  font-weight: var(--weight2);
+}
+
+.product form div button:hover {
+  filter: brightness(70%);
+}
+
+.product form > button {
+  font-weight: var(--weight2);
+  background-color: var(--orange);
+  border: none;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  color: var(--light-grayish-blue);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 15px 50px -16px rgba(255,125,25, 0.7);
+}
+
+/*For Modifying placeholder color*/
+.product form div input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color: var(--very-dark-blue);
+  font-weight: var(--weight2);
+}
+.product form div input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: var(--very-dark-blue);
+  font-weight: var(--weight2);
+  opacity:  1;
+}
+.product form div input::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: var(--very-dark-blue);
+  font-weight: var(--weight2);
+  opacity:  1;
+}
+.product form div input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: var(--very-dark-blue);
+  font-weight: var(--weight2);
+  opacity:  1;
+}
+.product form div input::-ms-input-placeholder { /* Microsoft Edge */
+  color: var(--very-dark-blue);
+  font-weight: var(--weight2);
+  opacity:  1;
+}
+
+.product form div input::placeholder { /* Most modern browsers support this now. */
+  color: var(--very-dark-blue);
+  font-weight: var(--weight2);
+  opacity:  1;
+}

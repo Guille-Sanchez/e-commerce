@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
 /*Primary
 Orange: hsl(26, 100%, 55%)
 Pale orange: hsl(25, 100%, 94%)
@@ -25,7 +25,7 @@ Weights: 400, 700*/
   --very-dark-blue: hsl(220, 13%, 13%);
   --dark-grayish-blue: hsl(219, 9%, 45%);
   --grayish-blue: hsl(220, 14%, 75%);
-  --light-grayish-blue: hsl(223, 64%, 98%);
+  --light-grayish-blue: hsl(230, 60%, 98%);
   --white: hsl(0, 0%, 100%);
   --black: rgba(0, 0, 0, 0.5);
 
@@ -33,6 +33,9 @@ Weights: 400, 700*/
   --font-family: 'Kumbh Sans', sans-serif;;
   --weight1: 400;
   --weight2: 700;
+
+  /*Layout*/
+  --main-left-right-padding: 15px;
 }
 
 * {
