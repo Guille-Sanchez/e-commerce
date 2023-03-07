@@ -1,4 +1,6 @@
 import { useId, useState } from 'react'
+import { iconNext, IconPrev } from '../../../assets/icons'
+import { nextImage, prevImage } from '../../../logic/carouselButtons'
 import './carousel.css'
 
 export const Carousel = (): JSX.Element => {
@@ -18,34 +20,17 @@ export const Carousel = (): JSX.Element => {
     src: 'image-product-4.jpg',
     alt: 'Fall Limited Edition Sneakers'
   }] as const
+
   const sneakersId = useId()
   const [currentPosition, setCurrentPosition] = useState(0)
-
-  const nextImage = (currentPosition: number): number => {
-    const length = 4
-
-    if (currentPosition === (length - 1)) {
-      return (0)
-    } else {
-      return (currentPosition + 1)
-    }
-  }
-
-  const prevImage = (currentPosition: number): number => {
-    const length = 4
-    if (currentPosition === 0) {
-      return (length - 1)
-    } else {
-      return (currentPosition - 1)
-    }
-  }
-
+  const sneakersLength = sneakers.length
   return (
     <div className='carousel'>
       {
         sneakers.map((sneaker, index) => {
           return (
             <img
+              loading='lazy'
               src={sneaker.src}
               alt={sneaker.alt}
               key={`${index}-${sneakersId}`}
@@ -56,19 +41,21 @@ export const Carousel = (): JSX.Element => {
       }
 
       <button
+        className='btn-prev'
         onClick={() => {
-          setCurrentPosition(() => prevImage(currentPosition))
+          setCurrentPosition(() => prevImage({ currentPosition, sneakersLength }))
         }}
       >
-        prev
+        {IconPrev}
       </button>
 
       <button
+        className='btn-next'
         onClick={() => {
-          setCurrentPosition(() => nextImage(currentPosition))
+          setCurrentPosition(() => nextImage({ currentPosition, sneakersLength }))
         }}
       >
-        Next
+        {iconNext}
       </button>
     </div>
   )
