@@ -1,0 +1,32 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid blue;
+  padding: 20px;
+}
+
+.navbar .left-wrapper {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border: 1px solid pink;
+}
+
+.navbar .left-wrapper button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: white;
+}
+
+.navbar .right-wrapper {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  border: 1px solid violet;
+}
+
+.navbar .right-wrapper img {
+  width: 24px;
+}
