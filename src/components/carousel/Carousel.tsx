@@ -1,6 +1,6 @@
 import { useId, useState } from 'react'
-import { iconNext, IconPrev } from '../../../assets/icons'
-import { nextImage, prevImage } from '../../../logic/carouselButtons'
+import { iconNext, IconPrev } from '../../assets/icons'
+import { nextImage, prevImage } from '../../logic/carouselButtons'
 import './carousel.css'
 
 export const Carousel = (): JSX.Element => {

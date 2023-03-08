@@ -1,0 +1,34 @@
+.menu-nav button {
+  background-color: inherit;
+  border: none;
+}
+
+.menu-nav ul {
+  display: grid;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 40px 0 0 0;
+}
+
+.menu-nav ul li a {
+  color: var(--very-dark-blue);
+  font-weight: var(--weight2);
+  text-decoration: none;
+}
+
+.wrapper-menu-nav {
+  background-color: var(--black);
+  height: 100%;
+  inset: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 1; 
+}
+
+.wrapper-menu-nav .menu-nav {
+  background-color: var(--white);
+  height: 100%;
+  padding: var(--main-left-right-padding);
+  width: 69%;
+}
