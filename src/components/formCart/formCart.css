@@ -1,0 +1,84 @@
+
+.form-cart {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 var(--main-left-right-padding);
+}
+
+.form-cart > button {
+  font-weight: var(--weight2);
+  background-color: var(--orange);
+  border: none;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  color: var(--light-grayish-blue);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 15px 70px -16px rgba(255,125,25, 0.7);
+}
+
+.form-cart div {
+  background-color: var(--light-grayish-blue);
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  align-items: center;
+}
+
+.form-cart div button {
+  background-color: var(--light-grayish-blue);
+  border: none;
+  font-size: 30px;
+  color: var(--orange);
+  font-weight: var(--weight2);
+}
+
+.form-cart div button:hover {
+  filter: brightness(70%);
+}
+
+/*For Modifying placeholder color*/
+.form-cart div input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color: var(--very-dark-blue);
+  font-weight: 900;
+  opacity:  1;
+}
+.form-cart div input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: var(--very-dark-blue);
+  font-weight: 900;
+  opacity:  1;
+}
+.form-cart div input::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: var(--very-dark-blue);
+  font-weight: 900;
+  opacity:  1;
+}
+.form-cart div input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: var(--very-dark-blue);
+  font-weight: 900;
+  opacity:  1;
+}
+.form-cart div input::-ms-input-placeholder { /* Microsoft Edge */
+  color: var(--very-dark-blue);
+  font-weight: 900;
+  opacity:  1;
+}
+
+.form-cart div input::placeholder { /* Most modern browsers support this now. */
+  color: var(--very-dark-blue);
+  font-weight: 900;
+  opacity:  1;
+}
+
+.form-cart div input {
+  height: 100%;
+  background-color: inherit;
+  text-align: center;
+  color: var(--very-dark-blue);
+  font-weight: 900;
+  font-size: 18px;
+  border: none;
+}

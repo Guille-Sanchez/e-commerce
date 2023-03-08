@@ -1,5 +1,6 @@
+import { FormCart } from '../formCart/FormCart'
 import './productDescription.css'
-import { iconCartWhite } from '../../assets/icons'
+
 export const ProductDescription = (): JSX.Element => {
   return (
     <section className='product'>
@@ -18,22 +19,7 @@ export const ProductDescription = (): JSX.Element => {
         <p>$250.00</p>
       </div>
 
-      <form>
-          <div>
-            <button>-</button>
-            <input
-              type="text"
-              readOnly
-              placeholder='0'
-            />
-            <button>+</button>
-          </div>
-
-        <button>
-          {iconCartWhite}
-          <p>Add to cart</p>
-        </button>
-      </form>
+      <FormCart />
 
     </section>
   )
