@@ -1,9 +1,12 @@
 import { iconCart, iconMenu, logo } from '../../assets/icons'
 import './navbar.css'
 
-interface setShowMenu { setShowMenu: React.Dispatch<React.SetStateAction<boolean>> }
+interface NavProps {
+  setShowMenu: React.Dispatch<React.SetStateAction<boolean>>
+  setShowCart: React.Dispatch<React.SetStateAction<boolean>>
+}
 
-export const Navbar = ({ setShowMenu }: setShowMenu): JSX.Element => {
+export const Navbar = ({ setShowMenu, setShowCart }: NavProps): JSX.Element => {
   return (
     <div className='navbar'>
       <div className='left-wrapper'>
@@ -16,7 +19,9 @@ export const Navbar = ({ setShowMenu }: setShowMenu): JSX.Element => {
       </div>
 
       <div className='right-wrapper'>
-        {iconCart}
+        <button onClick={() => { setShowCart((prev) => !prev) }}>
+          {iconCart}
+        </button>
         <img src="/image-avatar.png" alt="" />
       </div>
     </div>

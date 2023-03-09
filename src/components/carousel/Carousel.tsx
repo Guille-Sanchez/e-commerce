@@ -1,29 +1,12 @@
-import { useId, useState } from 'react'
+import { useId } from 'react'
 import { iconNext, IconPrev } from '../../assets/icons'
-import { nextImage, prevImage } from '../../logic/carouselButtons'
+import { useCarouselControls } from '../../hooks/useCarouselControls'
 import './carousel.css'
 
 export const Carousel = (): JSX.Element => {
-  const sneakers = [{
-    src: 'image-product-1.jpg',
-    alt: 'Fall Limited Edition Sneakers'
-  },
-  {
-    src: 'image-product-2.jpg',
-    alt: 'Fall Limited Edition Sneakers'
-  },
-  {
-    src: 'image-product-3.jpg',
-    alt: 'Fall Limited Edition Sneakers'
-  },
-  {
-    src: 'image-product-4.jpg',
-    alt: 'Fall Limited Edition Sneakers'
-  }] as const
-
   const sneakersId = useId()
-  const [currentPosition, setCurrentPosition] = useState(0)
-  const sneakersLength = sneakers.length
+  const { state, dispatch, sneakers } = useCarouselControls()
+
   return (
     <div className='carousel'>
       {
@@ -34,16 +17,15 @@ export const Carousel = (): JSX.Element => {
               src={sneaker.src}
               alt={sneaker.alt}
               key={`${index}-${sneakersId}`}
-              className={currentPosition === index ? 'show-card' : 'hide-card'}
+              className={state.currentPosition === index ? 'show-card' : 'hide-card'}
             />
           )
         })
       }
 
-      <button
-        className='btn-prev'
+      <button className='btn-prev'
         onClick={() => {
-          setCurrentPosition(() => prevImage({ currentPosition, sneakersLength }))
+          dispatch({ type: 'prevImage' })
         }}
       >
         {IconPrev}
@@ -52,7 +34,7 @@ export const Carousel = (): JSX.Element => {
       <button
         className='btn-next'
         onClick={() => {
-          setCurrentPosition(() => nextImage({ currentPosition, sneakersLength }))
+          dispatch({ type: 'nextImage' })
         }}
       >
         {iconNext}

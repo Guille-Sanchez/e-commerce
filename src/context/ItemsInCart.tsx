@@ -7,7 +7,7 @@ interface GlobalContent {
 
 export const numberOfItemInCartContext = createContext<GlobalContent>({
   numberOfItem: 0,
-  setNumberOfItem: (value: React.SetStateAction<number>) => {}
+  setNumberOfItem: (_value: React.SetStateAction<number>) => {}
 })
 
 interface children {children: React.ReactNode}
