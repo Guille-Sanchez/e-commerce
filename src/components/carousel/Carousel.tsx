@@ -1,9 +1,13 @@
 import { useId } from 'react'
 import { iconNext, IconPrev } from '../../assets/icons'
 import { useCarouselControls } from '../../hooks/useCarouselControls'
+import { Cart } from '../cart/Cart'
 import './carousel.css'
 
-export const Carousel = (): JSX.Element => {
+interface carouselPropType {
+  showCart: boolean
+}
+export const Carousel = ({ showCart }: carouselPropType): JSX.Element => {
   const sneakersId = useId()
   const { state, dispatch, sneakers } = useCarouselControls()
 
@@ -39,6 +43,7 @@ export const Carousel = (): JSX.Element => {
       >
         {iconNext}
       </button>
+      {showCart && <Cart />}
     </div>
   )
 }

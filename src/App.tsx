@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Carousel } from './components/carousel/Carousel'
-import { Cart } from './components/cart/Cart'
+// import { Cart } from './components/cart/Cart'
 import { Menu } from './components/menu/Menu'
 import { Navbar } from './components/navbar/Navbar'
 import { ProductDescription } from './components/productDescription/ProductDescription'
@@ -17,8 +17,8 @@ export const App = (): JSX.Element => {
       <Navbar setShowMenu={setShowMenu} setShowCart={setShowCart} />
       {showMenu && <Menu setShowMenu={setShowMenu}/>}
       <main className='main'>
-        {showCart && <Cart />}
-        <Carousel />
+        {/* showCart && <Cart /> */}
+        <Carousel showCart={showCart}/>
         <ProductDescription />
       </main>
 
