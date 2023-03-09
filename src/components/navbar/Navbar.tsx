@@ -1,4 +1,6 @@
+import { useContext } from 'react'
 import { iconCart, iconMenu, logo } from '../../assets/icons'
+import { numberOfItemInCartContext } from '../../context/ItemsInCart'
 import './navbar.css'
 
 interface NavProps {
@@ -7,6 +9,7 @@ interface NavProps {
 }
 
 export const Navbar = ({ setShowMenu, setShowCart }: NavProps): JSX.Element => {
+  const { numberOfItemInCart } = useContext(numberOfItemInCartContext)
   return (
     <div className='navbar'>
       <div className='left-wrapper'>
@@ -20,7 +23,12 @@ export const Navbar = ({ setShowMenu, setShowCart }: NavProps): JSX.Element => {
 
       <div className='right-wrapper'>
         <button onClick={() => { setShowCart((prev) => !prev) }}>
-          {iconCart}
+          <div className='container'>
+            {iconCart}
+            {numberOfItemInCart > 0 &&
+              <p className='cart-icon'>{numberOfItemInCart < 9 ? numberOfItemInCart : '+9'}</p>
+            }
+          </div>
         </button>
         <img src="/image-avatar.png" alt="" />
       </div>

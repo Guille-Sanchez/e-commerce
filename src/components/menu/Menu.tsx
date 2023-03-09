@@ -12,7 +12,7 @@ export const Menu = ({ setShowMenu }: typeSetShowMenu): JSX.Element => {
     <div className='wrapper-menu-nav'>
       <div className='menu-nav'>
         <button onClick={() => { setShowMenu((prev) => !prev) }}>
-          {IconClose}
+          <div>{IconClose}</div>
         </button>
         <ul>
           {

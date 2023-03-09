@@ -2,29 +2,54 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid blue;
   padding: var(--main-left-right-padding);
+}
+
+.navbar .container {
+  position: relative;
+}
+
+.navbar .container:hover {
+  cursor: pointer;
+}
+
+.navbar .cart-icon {
+  background-color: var(--orange);
+  border-radius: 10px;
+  color: white;
+  font-size: 10px;
+  padding: 0 7px;
+  position: absolute;
+  right: -5px;
+  top: -7px;
 }
 
 .navbar .left-wrapper {
   display: flex;
   gap: 10px;
   align-items: center;
-  border: 1px solid pink;
 }
 
 .navbar .left-wrapper button {
   padding: 0;
   margin: 0;
   border: none;
-  background-color: white;
+}
+
+.navbar .left-wrapper .menu-icon {
+  cursor: pointer;
 }
 
 .navbar .right-wrapper {
   display: flex;
   gap: 15px;
   align-items: center;
-  border: 1px solid violet;
+}
+
+.navbar .right-wrapper button {
+  background-color: inherit;
+  border: transparent;
+  color: var(--very-dark-blue);
 }
 
 .navbar .right-wrapper img {

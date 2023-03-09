@@ -32,7 +32,7 @@
   grid-template-columns: auto 1fr auto;
 }
 
-.cart .with-item button {
+.cart .with-item > button {
   background-color: var(--orange);
   border: none;
   border-radius: 10px;
@@ -40,6 +40,15 @@
   font-weight: var(--weight2);
   padding: 20px 0;
   width: 100%;
+}
+
+.cart .with-item > button:hover {
+  cursor: pointer;
+}
+
+.cart .with-item .button-delete {
+  background-color: inherit;
+  border: transparent;
 }
 
 .cart .with-item img {

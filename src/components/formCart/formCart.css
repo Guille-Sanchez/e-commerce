@@ -21,6 +21,14 @@
   box-shadow: 0 15px 70px -16px rgba(255,125,25, 0.7);
 }
 
+.form-cart > button:hover {
+  cursor: pointer;
+}
+
+.form-cart > button:active {
+  filter: brightness(150%);
+}
+
 .form-cart div {
   background-color: var(--light-grayish-blue);
   display: grid;
@@ -37,7 +45,8 @@
 }
 
 .form-cart div button:hover {
-  filter: brightness(70%);
+  filter: brightness(95%);
+  cursor: pointer;
 }
 
 /*For Modifying placeholder color*/

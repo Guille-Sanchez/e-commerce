@@ -4,7 +4,7 @@ import { numberOfItemInCartContext } from '../../context/ItemsInCart'
 import { sneakers } from '../../mockups/sneakers'
 import './cart.css'
 export const Cart = (): JSX.Element => {
-  const { numberOfItemInCart } = useContext(numberOfItemInCartContext)
+  const { numberOfItemInCart, setNumberOfItemInCart } = useContext(numberOfItemInCartContext)
   return (
     <div className="cart">
       <h3>Cart</h3>
@@ -19,7 +19,13 @@ export const Cart = (): JSX.Element => {
                   <p>Fall Limited Edition Sneakers</p>
                   <p>{`$125.00 x ${numberOfItemInCart}`} <strong>{`$${(125 * numberOfItemInCart).toFixed(2)}`}</strong></p>
                 </div>
-                <div>{iconDelete}</div>
+
+                <button
+                  className='button-delete'
+                  onClick={() => { setNumberOfItemInCart(() => 0) }}
+                >
+                  {iconDelete}
+                </button>
               </div>
               <button>Checkout</button>
             </div>

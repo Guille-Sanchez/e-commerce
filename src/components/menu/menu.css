@@ -3,6 +3,10 @@
   border: none;
 }
 
+.menu-nav button div {
+  cursor: pointer;
+}
+
 .menu-nav ul {
   display: grid;
   gap: 20px;
