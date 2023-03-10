@@ -1,7 +1,7 @@
 import { useId } from 'react'
 import { iconNext, IconPrev } from '../../assets/icons'
-import { useCarouselControls } from '../../hooks/useCarouselControls'
-import { Cart } from '../cart/Cart'
+import { useCarouselControls, REDUCER_ACTIONS_TYPE } from '../../hooks/useCarouselControls'
+// import { Cart } from '../cart/Cart'
 import './carousel.css'
 
 interface carouselPropType {
@@ -9,10 +9,12 @@ interface carouselPropType {
 }
 export const Carousel = ({ showCart }: carouselPropType): JSX.Element => {
   const sneakersId = useId()
+  const desktopSneakerId = useId()
   const { state, dispatch, sneakers } = useCarouselControls()
 
   return (
     <div className='carousel'>
+      <>
       {
         sneakers.map((sneaker, index) => {
           return (
@@ -27,9 +29,35 @@ export const Carousel = ({ showCart }: carouselPropType): JSX.Element => {
         })
       }
 
+      <div className='desktop-item-thumbnail'>
+        <div>
+          {
+            sneakers.map((sneaker, index) => {
+              return (
+                <button key={`${index}-${desktopSneakerId}`}
+                  onClick={() => {
+                    dispatch({ type: REDUCER_ACTIONS_TYPE.newPosition, payload: index })
+                  }}>
+                  <div className={state.currentPosition === index ? 'container-selected' : ''}>
+
+                    <img
+                      className={state.currentPosition === index ? 'thumbnail-selected' : ''}
+                      loading='lazy'
+                      src={sneaker.src}
+                      alt={sneaker.alt}
+                    />
+                  </div>
+                </button>
+              )
+            })
+          }
+        </div>
+      </div>
+      </>
+
       <button className='btn-prev'
         onClick={() => {
-          dispatch({ type: 'prevImage' })
+          dispatch({ type: REDUCER_ACTIONS_TYPE.prevImage })
         }}
       >
         {IconPrev}
@@ -38,12 +66,12 @@ export const Carousel = ({ showCart }: carouselPropType): JSX.Element => {
       <button
         className='btn-next'
         onClick={() => {
-          dispatch({ type: 'nextImage' })
+          dispatch({ type: REDUCER_ACTIONS_TYPE.nextImage })
         }}
       >
         {iconNext}
       </button>
-      {showCart && <Cart />}
+      {/* showCart && <Cart /> */}
     </div>
   )
 }

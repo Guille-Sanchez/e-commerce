@@ -1,11 +1,9 @@
 import { useState } from 'react'
 import { Carousel } from './components/carousel/Carousel'
-// import { Cart } from './components/cart/Cart'
-// import { Menu } from './components/menu/Menu'
+import { Cart } from './components/cart/Cart'
 import { Navbar } from './components/navbar/Navbar'
 import { ProductDescription } from './components/productDescription/ProductDescription'
 import { ItemsInCartProvider } from './context/ItemsInCart'
-
 import './e-commerce.css'
 
 export const App = (): JSX.Element => {
@@ -15,6 +13,7 @@ export const App = (): JSX.Element => {
   return (
     <ItemsInCartProvider>
       <Navbar showMenu={showMenu} setShowMenu={setShowMenu} setShowCart={setShowCart} />
+      {showCart && <Cart />}
       <main className='main'>
         <Carousel showCart={showCart}/>
         <ProductDescription />

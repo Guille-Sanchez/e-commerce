@@ -26,3 +26,28 @@
 * {
   font-family: var(--font-family);
 }
+
+@media (min-width: 500px) {
+  .main {
+    align-items: center;
+    box-sizing: border-box;
+    display: grid;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 16px;
+    grid-template-columns: 1fr 1fr;
+    padding: 30px 20px;
+  }
+}
+
+@media (min-width: 650px) {
+  .main {
+    padding: 30px var(--DESK-main-left-right-padding);
+  }
+}
+
+@media (min-width:950px) {
+  .main {
+    padding: 30px clamp(1.25rem, -14.232rem + 27.523vw, 20rem);
+  }
+}

@@ -3,7 +3,8 @@
   border-radius: 10px;
   display: grid;
   grid-template-rows: auto auto 1fr;
-  inset: 10px 10px 50px;
+  height: 250px;
+  inset: 70px 10px auto;
   position: absolute;
   z-index: 1;
 }
@@ -66,4 +67,34 @@ hr {
   color: var(--grayish-blue) !important;
   margin: 0;
   width: 100%;
+}
+
+@media (min-width: 500px) {
+  .cart {
+    height: 250px;
+    width: 350px;
+  }
+
+  .cart > * {
+    border-radius: 10px;
+    background-color: var(--white);
+  }
+}
+
+@media (min-width: 600px) {
+  .cart {
+    inset: clamp(-45%, -45% - 3%, 20%) var(--DESK-main-left-right-padding) auto auto;
+    width: 350px;
+    height: 250px;
+  }
+
+  .cart > * {
+    background-color: var(--white);
+  }
+
+  @media (min-width: 950px){
+    .cart {
+      inset: clamp(10%, 10% + 3%, 20%) var(--DESK-main-left-right-padding) auto auto;
+    }
+  }
 }
