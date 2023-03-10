@@ -1,3 +1,7 @@
+.hide-menu {
+  display: none;
+}
+
 .menu-nav button {
   background-color: inherit;
   border: none;
@@ -35,4 +39,35 @@
   height: 100%;
   padding: var(--main-left-right-padding);
   width: 69%;
+}
+
+@media (min-width: 650px) {
+  .hide-menu {
+    display: block;
+    
+  }
+
+  .logo-icon {
+    width: 100%;
+  }
+
+  .menu-nav button {
+    display: none;
+  }
+
+  .wrapper-menu-nav {
+    background-color: inherit;
+    height: auto;
+    position: relative;
+  }
+
+  .menu-nav ul {
+    align-items: center;
+    display: flex;
+    padding: 0;
+  }
+
+  .menu-nav ul li a {
+    color: var(--dark-grayish-blue);
+  }
 }
