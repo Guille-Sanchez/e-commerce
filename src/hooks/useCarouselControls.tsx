@@ -1,19 +1,27 @@
 import { useReducer } from 'react'
 import { sneakers, type sneakersType } from '../mockups/sneakers'
 
+const initState = { currentPosition: 0 }
+
+const REDUCER_ACTIONS = {
+  type: 'REDUCER_ACTION_TYPE',
+  prevImage: 'prevImage',
+  nextImage: 'nextImage'
+}
+
 interface carouselControlsType {
-  state: any
-  dispatch: React.Dispatch<any>
+  state: typeof initState
+  dispatch: React.Dispatch<typeof REDUCER_ACTIONS>
   sneakers: sneakersType
 }
 
 export const useCarouselControls = (): carouselControlsType => {
-  const [state, dispatch] = useReducer(reducer, { currentPosition: 0 })
+  const [state, dispatch] = useReducer(reducer, initState)
 
-  function reducer (state: any, action: any): any {
+  function reducer (state: typeof initState, action: typeof REDUCER_ACTIONS): any {
     const sneakersLength = sneakers.length
     switch (action.type) {
-      case 'prevImage':
+      case REDUCER_ACTIONS.nextImage:
         if (state.currentPosition === 0) {
           return ({ ...state, currentPosition: sneakersLength - 1 })
         } else {
@@ -21,7 +29,7 @@ export const useCarouselControls = (): carouselControlsType => {
           return ({ ...state, currentPosition: prev - 1 })
         }
 
-      case 'nextImage':
+      case REDUCER_ACTIONS.prevImage:
         if (state.currentPosition === (sneakersLength - 1)) {
           return ({ ...state, currentPosition: 0 })
         } else {
