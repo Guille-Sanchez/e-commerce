@@ -25,7 +25,7 @@ interface carouselControlsType {
 export const useCarouselControls = (): carouselControlsType => {
   const [state, dispatch] = useReducer(reducer, initState)
 
-  function reducer (state: typeof initState, action: ReducerAction): any {
+  function reducer (state: typeof initState, action: ReducerAction): typeof initState {
     const sneakersLength = sneakers.length
     switch (action.type) {
       case REDUCER_ACTIONS_TYPE.nextImage:
@@ -45,11 +45,11 @@ export const useCarouselControls = (): carouselControlsType => {
         }
 
       case REDUCER_ACTIONS_TYPE.newPosition:
-        return ({ ...state, currentPosition: action.payload })
+        return ({ ...state, currentPosition: action.payload ?? 0 })
 
       default:
         console.log('Error')
-        break
+        throw new Error()
     }
   }
 

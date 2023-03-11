@@ -71,8 +71,8 @@ hr {
 
 @media (min-width: 500px) {
   .cart {
-    inset: clamp(45px, 45px + 1%, 50px) var(--DESK-main-left-right-padding) auto auto;
     height: 250px;
+    inset: clamp(45px, 45px + 1%, 50px) var(--DESK-main-left-right-padding) auto auto;
     width: 355px;
   }
 
@@ -90,6 +90,12 @@ hr {
 
 @media (min-width: 1140px){
   .cart {
-    inset: clamp(60px, 60px + 1vw, 120px) var(--DESK-main-left-right-padding) auto auto;
+    inset: clamp(60px, 60px + 1vw, 77px) var(--DESK-main-left-right-padding) auto auto;
+  }
+}
+
+@media (min-width: 1800px){
+  .cart {
+    inset: clamp(70px, 62px + 1vw, 100px) var(--DESK-main-left-right-padding) auto auto;
   }
 }
