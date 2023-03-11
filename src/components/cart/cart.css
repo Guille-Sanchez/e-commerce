@@ -4,7 +4,7 @@
   display: grid;
   grid-template-rows: auto auto 1fr;
   height: 250px;
-  inset: 70px 10px auto;
+  inset: 10px 10px auto;
   position: absolute;
   z-index: 1;
 }
@@ -71,8 +71,9 @@ hr {
 
 @media (min-width: 500px) {
   .cart {
+    inset: clamp(45px, 45px + 1%, 50px) var(--DESK-main-left-right-padding) auto auto;
     height: 250px;
-    width: 350px;
+    width: 355px;
   }
 
   .cart > * {
@@ -83,18 +84,12 @@ hr {
 
 @media (min-width: 600px) {
   .cart {
-    inset: clamp(-45%, -45% - 3%, 20%) var(--DESK-main-left-right-padding) auto auto;
-    width: 350px;
-    height: 250px;
+    inset: clamp(50px, 50px + 1%, 60px) var(--DESK-main-left-right-padding) auto auto;
   }
+}
 
-  .cart > * {
-    background-color: var(--white);
-  }
-
-  @media (min-width: 950px){
-    .cart {
-      inset: clamp(10%, 10% + 3%, 20%) var(--DESK-main-left-right-padding) auto auto;
-    }
+@media (min-width: 1140px){
+  .cart {
+    inset: clamp(60px, 60px + 1vw, 120px) var(--DESK-main-left-right-padding) auto auto;
   }
 }

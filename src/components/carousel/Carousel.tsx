@@ -1,12 +1,13 @@
 import { useId } from 'react'
 import { iconNext, IconPrev } from '../../assets/icons'
 import { useCarouselControls, REDUCER_ACTIONS_TYPE } from '../../hooks/useCarouselControls'
-// import { Cart } from '../cart/Cart'
+import { Cart } from '../cart/Cart'
 import './carousel.css'
 
 interface carouselPropType {
   showCart: boolean
 }
+
 export const Carousel = ({ showCart }: carouselPropType): JSX.Element => {
   const sneakersId = useId()
   const desktopSneakerId = useId()
@@ -71,7 +72,13 @@ export const Carousel = ({ showCart }: carouselPropType): JSX.Element => {
       >
         {iconNext}
       </button>
-      {/* showCart && <Cart /> */}
+
+      {
+        showCart &&
+          <div className='carousel-cart'>
+            <Cart />
+          </div>
+      }
     </div>
   )
 }

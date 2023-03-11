@@ -46,14 +46,24 @@
   align-items: center;
 }
 
-.navbar .right-wrapper button {
+.navbar .right-wrapper .btn-icon-cart {
   background-color: inherit;
   border: transparent;
   color: var(--very-dark-blue);
 }
 
+.navbar .right-wrapper .nav-cart {
+  display: none;
+}
+
 .navbar .right-wrapper img {
   width: 24px;
+}
+
+@media (min-width: 500px) {
+  .navbar .right-wrapper .nav-cart {
+    display: block;
+  }
 }
 
 @media (min-width: 650px) {
